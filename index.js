@@ -11,7 +11,7 @@ function map(arr, someFunc){
 
 function reduce(arr, somefunc, startingPoint=0){
     for(let i = 0; i < arr.length; i++){
-        somefunc(arr[i], startingPoint)}
+        somefunc(arr[i], memo)}
         return somefunc();
 }
 // function reduceToAllTrue(sourceArray){
