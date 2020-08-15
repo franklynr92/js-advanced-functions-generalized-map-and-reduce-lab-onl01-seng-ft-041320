@@ -8,12 +8,35 @@ function map(arr, someFunc){
     return newArr
 }
 
+// function reduceToTotal(sourceArray, startingPoint = 0){
+//     let total = startingPoint ; 
+//     for (let i = 0; i < sourceArray.length; i++){
+//     total = total + sourceArray[i];
+//     }
+//     return total
+// }
 
-function reduce(arr, somefunc, startingPoint=0){
-    for(let i = 0; i < arr.length; i++){
-        somefunc(arr[i], memo)}
-        return somefunc();
+
+function reduce(arr, somefunc, startingPoint){
+    let memo = startingPoint ? startingPoint : arr[0];
+
+    let i = startingPoint ? 0 : 1
+    for(; i < arr.length; i++){
+        memo = somefunc(arr[i], memo)
+    }
+        return memo;
 }
+
+// function reduce(arr, callback, start) {
+//     let accumulator = start ? start : arr[0];
+//     let i = start ? 0 : 1;
+  
+//     for (; i < arr.length; i++) {
+//       accumulator = callback(arr[i], accumulator);
+//     }
+
+//     return accumulator;
+// }
 // function reduceToAllTrue(sourceArray){
 //     for (let i = 0; i < sourceArray.length; i++){
 //         if (!sourceArray[i]){ 
